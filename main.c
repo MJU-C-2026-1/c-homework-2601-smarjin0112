@@ -57,7 +57,7 @@ int main()
   printf("술: %d병\n", drink_count);
   printf("감자칩: %d개\n", potatochips_count);
   printf("치킨: %d개\n", chicken_count);
-  printf("기본 할인 5프로 적용 후 총 결제 금액: %f원", total_price_with_discount);
+  printf("기본 할인 5프로 적용 후 총 결제 금액: %.2f원", total_price_with_discount);
   
   return 0; 
 }
