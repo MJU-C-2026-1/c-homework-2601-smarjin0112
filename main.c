@@ -18,15 +18,20 @@ int main()
   int potatochips_count = 0;
   int chicken_count = 0;
 
-  float discount_rate = 0.05;
-  float total_price_with_discount = 0;
+  double discount_rate = 0.05;
+  double total_price_with_discount = 0;
 
   char order = 'y';
 
+  int service_choice;
+  double day_result = 0;
+
   // 첫 화면 출력
+  printf("첫번째 손님이 입장하셨습니다.\n");
+
   printf("========================\n");
   printf("이자카야에 오신 것을 환영합니다\n");
-  printf("메뉴판을 보시겠습니까? (y/n)\n");
+  printf("메뉴판을 보시려면 아무 알파벳이나 눌러주세요\n");
   printf("========================\n");
   scanf("%c", &order);
 
@@ -35,6 +40,7 @@ int main()
   printf("술(5000원)\n");
   printf("감자칩(6000원)\n");
   printf("치킨(9000원)\n");
+  printf("=============================\n");
 
   // 메뉴 수량 입력 + 금액 합산
   printf("술의 수량을 입력하세요 : ");
@@ -49,6 +55,11 @@ int main()
   scanf("%d", &chicken_count);
   total_price = total_price + chicken_price * chicken_count;
 
+  //추가 주문 여부 묻기
+  printf("추가 주문을 하시겠습니까? (동의 시 y)\n");
+  scanf(" %c", &order);
+
+
   total_price_with_discount = total_price * ( 1 - discount_rate );
 
   // 할인율 적용 후 총액 계산
@@ -57,7 +68,7 @@ int main()
   printf("술: %d병\n", drink_count);
   printf("감자칩: %d개\n", potatochips_count);
   printf("치킨: %d개\n", chicken_count);
-  printf("기본 할인 5프로 적용 후 총 결제 금액: %.2f원", total_price_with_discount);
+  printf("기본 할인 5프로 적용 후 총 결제 금액: %.2lf원", total_price_with_discount);
   
   return 0; 
 }
