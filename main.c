@@ -8,7 +8,7 @@
 
 int main()
 {
-   // 메뉴 가격 및 변수 선언
+  // 메뉴 가격 및 변수 선언
   int drink_price = 5000;
   int potato_price = 6000;
   int chicken_price = 9000;
