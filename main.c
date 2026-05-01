@@ -10,12 +10,12 @@ int main()
 {
    // 메뉴 가격 및 변수 선언
   int drink_price = 5000;
-  int potatochips_price = 6000;
+  int potato_price = 6000;
   int chicken_price = 9000;
   int total_price = 0;
 
   int drink_count = 0;
-  int potatochips_count = 0;
+  int potato_count = 0;
   int chicken_count = 0;
 
   double discount_rate = 0.05;
@@ -48,8 +48,8 @@ int main()
   total_price = total_price + drink_price * drink_count;
 
   printf("감자칩의 수량을 입력하세요 : ");
-  scanf("%d", &potatochips_count);
-  total_price = total_price + potatochips_price * potatochips_count;
+  scanf("%d", &potato_count);
+  total_price = total_price + potato_price * potato_count;
 
   printf("치킨의 수량을 입력하세요 : ");
   scanf("%d", &chicken_count);
@@ -59,16 +59,58 @@ int main()
   printf("추가 주문을 하시겠습니까? (동의 시 y)\n");
   scanf(" %c", &order);
 
+  if(order == 'y')
+  {
+    int add_drink;
+    int add_potato;
+    int add_chicken;
 
-  total_price_with_discount = total_price * ( 1 - discount_rate );
+    printf("추가로 주문할 술의 수량을 입력하세요 : ");
+    scanf("%d", &add_drink);
+
+    printf("추가로 주문할 감자칩의 수량을 입력하세요 : ");
+    scanf("%d", &add_potato);
+
+    printf("추가로 주문할 치킨의 수량을 입력하세요 : ");
+    scanf("%d", &add_chicken);
+
+    total_price += drink_price * add_drink;
+    total_price += potato_price * add_potato;
+    total_price += chicken_price * add_chicken;
+
+    drink_count += add_drink;
+    potato_count += add_potato;
+    chicken_count += add_chicken;
+  }
+  else
+  {
+    printf("주문이 완료되었습니다.\n\n");
+  }
+
+  // 결제 금액에 따른 할인율 적용
+  if(total_price >= 100000)
+  {
+    discount_rate = 0.2;
+  }
+  else if(total_price >= 50000)
+  {
+    discount_rate = 0.1;
+  }
+  else
+  {
+    discount_rate = 0;
+  }
 
   // 할인율 적용 후 총액 계산
+  total_price_with_discount = total_price * ( 1 - discount_rate );
+
   printf("=========================\n");
   printf("주문 내역\n");
   printf("술: %d병\n", drink_count);
-  printf("감자칩: %d개\n", potatochips_count);
+  printf("감자칩: %d개\n", potato_count);
   printf("치킨: %d개\n", chicken_count);
-  printf("기본 할인 5프로 적용 후 총 결제 금액: %.2lf원", total_price_with_discount);
-  
+  printf("기본 할인 5프로 적용 후 총 결제 금액: %.2lf원 \n", total_price_with_discount);
+  printf("=========================\n\n");
+
   return 0; 
 }
