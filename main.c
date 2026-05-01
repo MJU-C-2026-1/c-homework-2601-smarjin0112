@@ -109,8 +109,44 @@ int main()
   printf("술: %d병\n", drink_count);
   printf("감자칩: %d개\n", potato_count);
   printf("치킨: %d개\n", chicken_count);
-  printf("기본 할인 5프로 적용 후 총 결제 금액: %.2lf원 \n", total_price_with_discount);
+  printf("할인율 적용 후 총 결제 금액: %.2lf원 \n", total_price_with_discount);
   printf("=========================\n\n");
 
+  printf("결제 금액을 확인하셨다면 아무 알파벳이나 눌러주세요 : ");
+  scanf(" %c", &order);
+
+  // 손님 응대하기
+  printf("\n=========================\n");
+  printf("[상황] 손님이 서비스 안주를 요청합니다.\n\n");
+
+  printf("1. 친절하게 서비스를 가져다준다.\n");
+  printf("2. 바쁘다며 거절한다.\n\n");
+
+  printf("[상황] 어떻게 하시겠습니까? (1 또는 2) : ");
+  scanf("%d", &service_choice);
+
+  if(service_choice == 1)
+  {
+    printf("=========================\n\n");
+    printf("손님이 감동하여 팁 2000원을 건넸습니다.\n\n");
+    day_result += 2000;
+  }
+  else if(service_choice == 2)
+  {
+    printf("=========================\n\n");
+    printf("손님이 기분이 상해 1000원 할인을 요구합니다.\n\n");
+    day_result -= 1000;
+  }
+  else
+  {
+    printf("=========================\n\n");
+    printf("선택지의 숫자를 입력해주세요.\n");
+  }
+
+  // 하루의 총 매출 계산
+  day_result += total_price_with_discount;
+  printf("=========================\n");
+  printf("오늘의 총 매출액 : %.2lf원 \n", day_result);
+  
   return 0; 
 }
