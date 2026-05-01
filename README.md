@@ -82,8 +82,10 @@ https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/commit/f2008c56ea5bf
      * **해결:** AI 검색을 통해 컴퓨터는 엔터도 하나의 문자로 인식한다는 것을 알게되었고, 'scanf(" %c", &order");'와 같이 %c앞에 공백 한 칸을 추가함으로써 문제를 해결함.
      
 ### **📁 증빙 자료:**
-  * [2차_AI협업캡처.pdf 첨부 완료] (첨부 후 링크)
+  * [2차_AI협업캡처.pdf 첨부 완료]
+  https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/AI%20%ED%98%91%EC%97%85%20%EC%A6%9D%EB%AA%85%202%EC%B0%A8.pdf
   * [2차과제_실행결과.jpg]
+
 <br>
 
 ## 🟨 [3차 과제: V3.0] 무한 루프와 메뉴 시스템 (반복문) - 향후 작성 예정
