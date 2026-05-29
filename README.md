@@ -103,8 +103,10 @@ https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/2%EC%B0%A8
      * **해결:** AI 검색을 통해 switch~case 구문 안에 하루의 총 매출을 누적해주는 수식이 필요함을 알게되었고, 'day_result += total_price_with_discount;' 수식을 추가함으로써 문제를 해결함.
      
 ### **📁 증빙 자료:**
-  * [3차_AI협업캡처.pdf 첨부 완료] (첨부 후 링크)
-  * [3차과제_실행결과.jpg]
+  * [3차_AI협업캡처.pdf 첨부 완료]
+  https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/AI%20%ED%98%91%EC%97%85%20%EC%A6%9D%EB%AA%85%203%EC%B0%A8.pdf
+  * [3차과제_실행결과.pdf]
+  https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/3%EC%B0%A8%EA%B3%BC%EC%A0%9C_%EC%8B%A4%ED%96%89%EA%B2%B0%EA%B3%BC.pdf
 <br>
 
 ### 🟥 [4차 과제: V4.0] 모듈화 및 데이터 확장 (배열과 함수) - 🌟최종 완성 -- 향후 작성 예정
