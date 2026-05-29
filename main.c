@@ -76,7 +76,7 @@ int main()
           printf("술(5000원)\n");
           printf("감자칩(6000원)\n");
           printf("치킨(9000원)\n");
-          printf("=============================\n");
+          printf("============================\n");
 
           // 메뉴 수량 입력 + 금액 합산
           printf("술의 수량을 입력하세요 : ");
@@ -93,13 +93,14 @@ int main()
 
           //추가 주문 여부 묻기
           printf("추가 주문을 하시겠습니까? (동의 시 y)\n");
+          printf("추가 주문을 원치 않으시면 y를 제외한 알파벳을 눌러주세요.\n");
           scanf(" %c", &order);
 
           if(order == 'y')
           {
-            int add_drink;
-            int add_potato;
-            int add_chicken;
+            int add_drink = 0;
+            int add_potato = 0;
+            int add_chicken = 0;
 
             printf("추가로 주문할 술의 수량을 입력하세요 : ");
             scanf("%d", &add_drink);
@@ -141,7 +142,7 @@ int main()
           total_price_with_discount = total_price * ( 1 - discount_rate );
 
           printf("=========================\n");
-          printf("주문 내역\n");
+          printf("[주문 내역]\n");
           printf("술: %d병\n", drink_count);
           printf("감자칩: %d개\n", potato_count);
           printf("치킨: %d개\n", chicken_count);
@@ -150,6 +151,9 @@ int main()
 
           printf("결제 금액을 확인하셨다면 아무 알파벳이나 눌러주세요 : ");
           scanf(" %c", &order);
+
+          // 음식 매출 우선 누적
+          day_result += total_price_with_discount;
 
           // 손님 응대하기
           printf("\n=========================\n");
@@ -178,6 +182,13 @@ int main()
             printf("=========================\n\n");
             printf("선택지의 숫자를 입력해주세요.\n");
           }
+          printf("%d번 손님의 응대가 끝났습니다.\n", guest_counter);
+          break;
+        }  
+      default:
+        {
+          printf("\n올바른 번호를 입력해주세요.\n");
+          break;
         }  
     }  
   }  
@@ -185,6 +196,7 @@ int main()
   // 하루의 총 매출 계산
   day_result += total_price_with_discount;
   printf("=========================\n");
+  printf("오늘 방문한 총 손님 수 : %d명 \n", guest_counter);
   printf("오늘의 총 매출액 : %.2lf원 \n", day_result);
   
   return 0; 
