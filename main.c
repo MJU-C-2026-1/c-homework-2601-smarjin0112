@@ -109,8 +109,124 @@ int main()
   {
     printf("\n 오늘 방문한 손님이 없습니다. \n");
   }
-  
+
   printf("오늘의 총 매출액 : %.2lf원 \n", day_result);
   
   return 0; 
 }
+
+// 함수 정의
+void show_menu()
+{
+  char order = 'y';
+
+  printf("========================\n");
+  printf("이자카야에 오신 것을 환영합니다\n");
+  printf("메뉴판을 보시려면 아무 알파벳이나 눌러주세요\n");
+  printf("========================\n");
+  scanf(" %c", &order);
+
+  // 메뉴판 출력
+  printf("====== 이자카야 메뉴판 ======\n");
+  printf("술(5000원)\n");
+  printf("감자칩(6000원)\n");
+  printf("치킨(9000원)\n");
+  printf("============================\n");
+}
+
+double cal_order()
+{
+  int drink_price = 5000;
+  int potato_price = 6000;
+  int chicken_price = 9000;
+  int total_price = 0;
+    
+	int drink_count = 0;
+  int potato_count = 0;
+  int chicken_count = 0;
+	double discount_rate = 0;
+  double final_price = 0;
+
+  // 메뉴 수량 입력 + 금액 합산
+  printf("술의 수량을 입력하세요 : ");
+  scanf("%d", &drink_count);
+  total_price = total_price + drink_price * drink_count;
+
+  printf("감자칩의 수량을 입력하세요 : ");
+  scanf("%d", &potato_count);
+  total_price = total_price + potato_price * potato_count;
+
+  printf("치킨의 수량을 입력하세요 : ");
+  scanf("%d", &chicken_count);
+  total_price = total_price + chicken_price * chicken_count;
+
+  //추가 주문 여부 묻기
+  char order = 'y';
+  printf("추가 주문을 하시겠습니까? (동의 시 y)\n");
+  printf("추가 주문을 원치 않으시면 y를 제외한 알파벳을 눌러주세요.\n");
+  scanf(" %c", &order);
+
+  if(order == 'y')
+  {
+    int add_drink = 0;
+    int add_potato = 0;
+    int add_chicken = 0;
+
+    printf("추가로 주문할 술의 수량을 입력하세요 : ");
+    scanf("%d", &add_drink);
+
+    printf("추가로 주문할 감자칩의 수량을 입력하세요 : ");
+    scanf("%d", &add_potato);
+
+    printf("추가로 주문할 치킨의 수량을 입력하세요 : ");
+    scanf("%d", &add_chicken);
+
+    total_price += drink_price * add_drink;
+    total_price += potato_price * add_potato;
+    total_price += chicken_price * add_chicken;
+
+    drink_count += add_drink;
+    potato_count += add_potato;
+    chicken_count += add_chicken;
+  }
+  else
+  {
+    printf("주문이 완료되었습니다.\n\n");
+  }
+
+  // 결제 금액에 따른 할인율 적용
+  if(total_price >= 100000)
+  {
+    discount_rate = 0.2;
+  }
+  else if(total_price >= 50000)
+  {
+    discount_rate = 0.1;
+  }
+  else
+  {
+    discount_rate = 0;
+  }
+
+  // 할인율 적용 후 총액 계산
+  final_price = total_price * ( 1 - discount_rate );
+
+  printf("=========================\n");
+  printf("[주문 내역]\n");
+  printf("술: %d병\n", drink_count);
+  printf("감자칩: %d개\n", potato_count);
+  printf("치킨: %d개\n", chicken_count);
+  printf("할인율 적용 후 총 결제 금액: %.2lf원 \n", final_price);
+  printf("=========================\n\n");
+
+  printf("결제 금액을 확인하셨다면 아무 알파벳이나 눌러주세요 : ");
+  scanf(" %c", &order);
+
+  // 음식 매출 우선 누적
+  day_result += final_price;
+
+  return final_price;
+}
+
+
+
