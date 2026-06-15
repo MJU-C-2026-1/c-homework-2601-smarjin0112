@@ -121,11 +121,11 @@ https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/2%EC%B0%A8
     
 ### **🛠️ Troubleshooting & 기술 회고:**
   1. **문제 1:** 프로그램 실행 후, 손님을 한명도 받지 않고 바로 "영업 마감"을 선택했을 시에 하루 매출 평균 값이 숫자가 아닌 이상한 값으로 나오는 오류가 발생함.
-     * **해결:** AI 검색을 통해, 해당 오류는 수학적으로 불가능한 '0으로 나누기' 연산을 통한 오류였음을 알게되어 이를 수정함.
+     * **해결:** AI 검색을 통해, 해당 오류는 수학적으로 불가능한 '0으로 나누기' 연산을 통한 오류였음을 알게되어 이를 수정
      
 ### **📁 증빙 자료:**
   * [4차_AI협업캡처.pdf 첨부 완료]
-  * 
-  * [4차과제_실행결과.jpg]
-  * 
+https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/AI%20%ED%98%91%EC%97%85_4%EC%B0%A8%EA%B3%BC%EC%A0%9C.pdf
+  * [4차과제_실행결과.pdf]
+https://github.com/MJU-C-2026-1/c-homework-2601-smarjin0112/blob/main/4%EC%B0%A8%EA%B3%BC%EC%A0%9C_%EC%8B%A4%ED%96%89%EA%B2%B0%EA%B3%BC.pdf
 <br>
