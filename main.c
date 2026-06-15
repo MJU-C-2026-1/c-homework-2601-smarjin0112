@@ -1,5 +1,5 @@
 /* 
-  파일이름: C언어 1차과제
+  파일이름: C언어 4차과제
   작 성 자: 60231920_김학진
   하 는 일: 이자카야 주문 시스템 만들기
 */
@@ -18,10 +18,6 @@ double cal_average(double *arr, int count);
 // main함수 선언
 int main()
 {
-  int drink_count = 0;
-  int potato_count = 0;
-  int chicken_count = 0;
-
   double guest_payments[100] = {0}; // 배열 선언
 
   // 첫 화면 출력
@@ -77,7 +73,6 @@ int main()
   }  
 
   // 하루의 총 매출 계산
-  day_result += total_price_with_discount;
   printf("=========================\n");
   printf("오늘 방문한 총 손님 수 : %d명 \n", guest_counter);
 
@@ -228,5 +223,45 @@ double cal_order()
   return final_price;
 }
 
+void handle_service(double current_pay)
+{
+  int service_choice;
 
+  // 손님 응대하기
+  printf("\n=========================\n");
+  printf("[상황] 손님이 서비스 안주를 요청합니다.\n\n");
 
+  printf("1. 친절하게 서비스를 가져다준다.\n");
+  printf("2. 바쁘다며 거절한다.\n\n");
+
+  printf("[상황] 어떻게 하시겠습니까? (1 또는 2) : ");
+  scanf("%d", &service_choice);
+
+  if(service_choice == 1)
+  {
+    printf("=========================\n\n");
+    printf("손님이 감동하여 팁 2000원을 건넸습니다.\n\n");
+    day_result += 2000;
+  }
+  else if(service_choice == 2)
+  {
+    printf("=========================\n\n");
+    printf("손님이 기분이 상해 1000원 할인을 요구합니다.\n\n");
+    day_result -= 1000;
+  }
+  else
+  {
+    printf("=========================\n\n");
+    printf("선택지의 숫자를 입력해주세요.\n");
+  }
+}
+
+double cal_average(double *arr, int count)
+{
+  double sum = 0;
+  for(int i=0; i<count; i++)
+  {
+    sum += *(arr+i);
+  }
+  return sum / count;
+}
