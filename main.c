@@ -6,6 +6,16 @@
 
 #include <stdio.h>
 
+int guest_counter = 0; // 손님 수 증가를 전역 변수로 선언
+double day_result = 0; // 하루 총 매출을 전역 변수로 선언
+
+// 함수 선언
+void show_menu();
+double cal_order();
+void handle_service(double current_pay);
+double cal_average(double *arr, int count);
+
+// main함수 선언
 int main()
 {
   // 메뉴 가격 및 변수 선언
