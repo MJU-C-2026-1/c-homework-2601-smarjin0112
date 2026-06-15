@@ -80,6 +80,36 @@ int main()
   day_result += total_price_with_discount;
   printf("=========================\n");
   printf("오늘 방문한 총 손님 수 : %d명 \n", guest_counter);
+
+  if(guest_counter > 0)
+  {
+    printf("\n [손님별 결제 내역] \n");
+
+    for(int i=0; i<guest_counter; i++)
+    {
+      printf("%d번째 손님의 결제 금액 : %.2lf원 \n", i+1, guest_payments[i]);
+    }
+
+    double *ptr = guest_payments;
+    double max_payment = *ptr;
+
+    for(int i=0; i<guest_counter; i++)
+    {
+      if(*(ptr+i) > max_payment)
+      {
+        max_payment = *(ptr+i);
+      }
+    }
+    printf("\n 오늘의 최고 결제 금액 : %.2lf원 \n", max_payment);
+
+    double average_payment = cal_average(guest_payments, guest_counter);
+    printf("오늘 손님들의 1인당 평균 결제 금액 : %.2lf원 \n", average_payment);
+  }
+  else
+  {
+    printf("\n 오늘 방문한 손님이 없습니다. \n");
+  }
+  
   printf("오늘의 총 매출액 : %.2lf원 \n", day_result);
   
   return 0; 
